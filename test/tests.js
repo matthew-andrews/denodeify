@@ -1,6 +1,6 @@
 require('es6-promise/dist/commonjs/promise/polyfill').polyfill();
-var denodeify = require("../")
-var assert = require('assert')
+var denodeify = require("../");
+var assert = require('assert');
 
 function myNodeStyleFunction(argument1, argument2, callback) {
 	if (argument1 && argument2) {
@@ -12,7 +12,8 @@ function myNodeStyleFunction(argument1, argument2, callback) {
 
 describe('denodeify', function(){
 	it('should resolve when there are no errors', function(done) {
-		denodeify(myNodeStyleFunction, 1, 2)
+		var myDenodeifiedNodeStyleFunction = denodeify(myNodeStyleFunction);
+		myDenodeifiedNodeStyleFunction(1, 2)
 			.then(function(result) {
 				assert.equal(3, result);
 				done();
@@ -21,8 +22,9 @@ describe('denodeify', function(){
 			});
 	});
 
-	it('should resolve when there are no errors', function(done) {
-		var promise = denodeify(myNodeStyleFunction, 1, undefined)
+	it('should reject when there are errors', function(done) {
+		var myDenodeifiedNodeStyleFunction = denodeify(myNodeStyleFunction);
+		var promise = myDenodeifiedNodeStyleFunction(1, undefined);
 		assert(promise instanceof Promise);
 		promise
 			.then(function(result) {
