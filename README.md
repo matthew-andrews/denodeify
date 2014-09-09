@@ -13,7 +13,7 @@ npm install --save denodeify
 
 ## Examples
 
-Simple example with `readFile`:-
+Simple example with [`readFile`](https://www.npmjs.org/package/read-file):-
 
 ```js
 var denodeify = require('denodeify');
