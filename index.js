@@ -6,7 +6,6 @@ module.exports = function() {
 			if (err) {
 				reject(err);
 			} else {
-				console.log(resolve);
 				resolve(data);
 			}
 		});
