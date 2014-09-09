@@ -1,6 +1,6 @@
 {
   "name": "denodeify",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Tool to wrap functions with Node style APIs",
   "main": "index.js",
   "directories": {
