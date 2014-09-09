@@ -15,7 +15,7 @@ describe('denodeify', function(){
 		var myDenodeifiedNodeStyleFunction = denodeify(myNodeStyleFunction);
 		myDenodeifiedNodeStyleFunction(1, 2)
 			.then(function(result) {
-				assert.equal(3, result);
+				assert.equal(3, result[0]);
 				done();
 			}, function() {
 				throw new Error('Error callback called wrongly');
