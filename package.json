@@ -1,0 +1,26 @@
+{
+  "name": "denodeify",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matthew-andrews/denodeify.git"
+  },
+  "author": "Matt Andrews",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthew-andrews/denodeify/issues"
+  },
+  "homepage": "https://github.com/matthew-andrews/denodeify",
+  "devDependencies": {
+    "es6-promise": "^1.0.0",
+    "mocha": "^1.21.4"
+  }
+}
