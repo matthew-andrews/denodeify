@@ -11,5 +11,5 @@ module.exports = function(fun) {
 			});
 			fun.apply(this, args);
 		}.bind(this));
-	}.bind(this);
+	};
 };
