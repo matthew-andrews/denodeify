@@ -60,4 +60,4 @@ exec('my-command')
   });
 ```
 
-Useful for functions that return multiple arguments, for example `child_process#exec`[http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback].
+Useful for functions that return multiple arguments, for example [`child_process#exec`](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback).
