@@ -3,7 +3,7 @@ denodeify [ ![Codeship Status for matthew-andrews/denodeify](https://codeship.io
 
 Tool to turn functions with Node-style callback APIs into functions that return [Promises](https://github.com/jakearchibald/es6-promise).
 
-Inspired by and adapted from Q's [`Q.denodefiy`/`Q.nfcall` function](https://github.com/kriskowal/q/wiki/API-Reference#qnfbindnodefunc-args).
+Inspired by and adapted from Q's [`Q.denodeify`/`Q.nfcall` function](https://github.com/kriskowal/q/wiki/API-Reference#qnfbindnodefunc-args).
 
 Warning: Assumes `Promise` defined in global scope.
 
