@@ -33,6 +33,8 @@ readFile('my-file.txt', { encoding: 'UTF-8' })
   });
 ```
 
+(Note: you will need to also install [es6-promise](https://github.com/jakearchibald/es6-promise) with `npm install es6-promise` for this code sample to work within node versions that don't have `Promise` natively available)
+
 More complex example with `exec`:-
 
 ## Advanced usage
@@ -54,8 +56,6 @@ exec('hostname')
     console.log("My hostname is: " + host.replace('\n', ''));
   });
 ```
-
-(Note: you will need to also install [es6-promise](https://github.com/jakearchibald/es6-promise) with `npm install es6-promise` for this code sample to work within node versions that don't have `Promise` natively available)
 
 Or,
 
