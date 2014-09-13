@@ -20,6 +20,8 @@ npm install --save denodeify
 Simple example with [`readFile`](https://www.npmjs.org/package/read-file):-
 
 ```js
+require('es6-promise/dist/commonjs/promise/polyfill').polyfill();
+
 var denodeify = require('denodeify');
 var readFile = denodeify(require('fs').readFile);
 
