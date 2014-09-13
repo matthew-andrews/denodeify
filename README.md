@@ -5,7 +5,9 @@ Tool to turn functions with Node-style callback APIs into functions that return 
 
 Inspired by and adapted from Q's [`Q.denodeify`/`Q.nfcall` function](https://github.com/kriskowal/q/wiki/API-Reference#qnfbindnodefunc-args).
 
-Warning: Assumes `Promise` defined in global scope.
+Warning: This micro-library doesn't force you to use any particular Promise implementation by using whatever `Promise` has defined to be globally.  This is so that you may use any ES6 standard Promise compliant library - or, of course, native ES6 Promises.
+
+If you're running the code on a browser or node version that doesn't include native promises you will need to include a polyfill - I recommand using Jake Archibald's [ES6 Promise library](https://github.com/jakearchibald/es6-promise).
 
 ## Installation
 
