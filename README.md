@@ -34,8 +34,7 @@ More complex example with `exec`:-
 You can also pass in a function as a second argument of `denodeify` that allows you to manipulate the data returned by the wrapped function before it gets passed to the Promise's `reject` or `resolve` functions, for example:-
 
 ```js
-// Polyfill `Promise` if not already available
-if (!('Promies' in this)) require('es6-promise/dist/commonjs/promise/polyfill').polyfill();
+require('es6-promise/dist/commonjs/promise/polyfill').polyfill();
 
 var denodeify = require('denodeify');
 var exec = denodeify(require('child_process').exec, function(err, stdout, stderr) {
@@ -50,11 +49,13 @@ exec('hostname')
   });
 ```
 
-(Note: you will need to run `npm install es6-promise denodeify` for this code sample to work)
+(Note: you will need to also install [es6-promise](https://github.com/jakearchibald/es6-promise) with `npm install es6-promise` for this code sample to work within node versions that don't have `Promise` natively available)
 
 Or,
 
 ```js
+require('es6-promise/dist/commonjs/promise/polyfill').polyfill();
+
 var denodeify = require('denodeify');
 var exec = denodeify(require('child_process').exec, function(err, stdout, stderr) {
   return [err, [stdout, stderr]];
