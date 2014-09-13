@@ -1,3 +1,4 @@
+delete global.Promise;
 require('es6-promise/dist/commonjs/promise/polyfill').polyfill();
 
 var denodeify = require("../");
@@ -32,6 +33,26 @@ describe('denodeify with es6 promise', function(){
 				throw new Error('A Promised myNodeStyleFunction with one argument should never resolve');
 			}, function(error) {
 				assert.equal(error, 'Need both arguments');
+				done();
+			});
+	});
+});
+
+function multipleArgumentsNodeStyleFunction(callback) {
+	callback(null, 'a', 'b');
+}
+
+function myFilter(err, a, b) {
+	return [err, [a, b]];
+}
+
+describe('denodeify with es6 promise using multiple arguments', function(){
+	it('should pass multiple arguments to the next then', function(done) {
+		var myDenodeifiedNodeStyleFunction = denodeify(multipleArgumentsNodeStyleFunction, myFilter);
+		myDenodeifiedNodeStyleFunction()
+			.then(function(results) {
+				assert.equal(results[0], 'a');
+				assert.equal(results[1], 'b');
 				done();
 			});
 	});
