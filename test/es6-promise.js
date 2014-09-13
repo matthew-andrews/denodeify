@@ -1,4 +1,5 @@
 require('es6-promise/dist/commonjs/promise/polyfill').polyfill();
+
 var denodeify = require("../");
 var assert = require('assert');
 
@@ -10,7 +11,7 @@ function myNodeStyleFunction(argument1, argument2, callback) {
 	}
 }
 
-describe('denodeify', function(){
+describe('denodeify with es6 promise', function(){
 	it('should resolve when there are no errors', function(done) {
 		var myDenodeifiedNodeStyleFunction = denodeify(myNodeStyleFunction);
 		myDenodeifiedNodeStyleFunction(1, 2)

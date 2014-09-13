@@ -1,4 +1,5 @@
-require('es6-promise/dist/commonjs/promise/polyfill').polyfill();
+require("native-promise-only");
+
 var denodeify = require("../");
 var assert = require('assert');
 
@@ -10,7 +11,7 @@ function myFilter(err, a, b) {
 	return [err, [a, b]];
 }
 
-describe('multiple arguments', function(){
+describe('denodeify with native-promise-only using multiple arguments', function(){
 	it('should pass multiple arguments to the next then', function(done) {
 		var myDenodeifiedNodeStyleFunction = denodeify(myNodeStyleFunction, myFilter);
 		myDenodeifiedNodeStyleFunction()
