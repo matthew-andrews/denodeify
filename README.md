@@ -7,7 +7,9 @@ Inspired by and adapted from Q's [`Q.denodeify`/`Q.nfcall` function](https://git
 
 Warning: This micro-library doesn't force you to use any particular Promise implementation by using whatever `Promise` has defined to be globally.  This is so that you may use any ES6 standard Promise compliant library - or, of course, native ES6 Promises.
 
-If you're running the code on a browser or node version that doesn't include native promises you will need to include a polyfill - I recommand using Jake Archibald's [ES6 Promise library](https://github.com/jakearchibald/es6-promise).
+If you're running the code on a browser or node version that doesn't include native promises you will need to include a polyfill.  The following polyfills are tested as part of this module's test suite:-
+- [Jake Archibald](https://twitter.com/jaffathecake)'s [ES6 Promise library](https://github.com/jakearchibald/es6-promise) (which is actually adapted from [Stefan Penner's](https://twitter.com/stefanpenner)'s [RSVP.js](https://github.com/tildeio/rsvp.js).
+- [Getify](https://twitter.com/jaffathecake)'s [Native Promise Only library](https://github.com/getify/native-promise-only)
 
 ## Installation
 
