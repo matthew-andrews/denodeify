@@ -75,3 +75,7 @@ exec('my-command')
 ```
 
 Useful for functions that return multiple arguments, for example [`child_process#exec`](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback).
+
+## Credits and collaboration ##
+
+The lead developer of **denodeify** is [Matt Andrews](http://twitter.com/andrewsmatt) at FT Labs with much help and support from [Kornel Lesiński](https://twitter.com/pornelski). All open source code released by FT Labs is licenced under the MIT licence. We welcome comments, feedback and suggestions.  Please feel free to raise an issue or pull request.
