@@ -1,5 +1,5 @@
 delete global.Promise;
-require('es6-promise/dist/commonjs/promise/polyfill').polyfill();
+require('es6-promise').polyfill();
 
 var denodeify = require("../");
 var assert = require('assert');
