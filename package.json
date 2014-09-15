@@ -21,6 +21,7 @@
   "homepage": "https://github.com/matthew-andrews/denodeify",
   "devDependencies": {
     "es6-promise": "^1.0.0",
+    "es6-shim": "^0.18.0",
     "jshint": "^2.5.5",
     "mocha": "^1.21.4",
     "native-promise-only": "^0.7.6-a"
