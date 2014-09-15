@@ -10,6 +10,7 @@ Warning: This micro-library doesn't force you to use any particular Promise impl
 If you're running the code on a browser or node version that doesn't include native promises you will need to include a polyfill.  The following polyfills are tested as part of this module's test suite:-
 - [Jake Archibald](https://twitter.com/jaffathecake)'s [ES6 Promise library](https://github.com/jakearchibald/es6-promise) (which is actually adapted from [Stefan Penner](https://twitter.com/stefanpenner)'s [RSVP.js](https://github.com/tildeio/rsvp.js)).
 - [Getify](https://twitter.com/jaffathecake)'s [Native Promise Only library](https://github.com/getify/native-promise-only)
+- [ES6 Shim](https://github.com/es-shims/es6-shim)
 
 ## Installation
 
