@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha && ./node_modules/.bin/jshint `find . -name '*.js' ! -path './node_modules/*'`"
+    "test": "./node_modules/.bin/mocha test/*test.js && ./node_modules/.bin/jshint `find . -name '*.js' ! -path './node_modules/*'`"
   },
   "repository": {
     "type": "git",

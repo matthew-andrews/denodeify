@@ -1,8 +1,5 @@
-delete global.Promise;
-require('es6-shim');
-
-var denodeify = require("../");
 var assert = require('assert');
+var denodeify = require('../');
 
 function myNodeStyleFunction(argument1, argument2, callback) {
 	if (argument1 && argument2) {
@@ -12,7 +9,7 @@ function myNodeStyleFunction(argument1, argument2, callback) {
 	}
 }
 
-describe('denodeify with es6 shim', function(){
+exports.basicDenodeify = function() {
 	it('should resolve when there are no errors', function(done) {
 		var myDenodeifiedNodeStyleFunction = denodeify(myNodeStyleFunction);
 		myDenodeifiedNodeStyleFunction(1, 2)
@@ -36,7 +33,7 @@ describe('denodeify with es6 shim', function(){
 				done();
 			});
 	});
-});
+};
 
 function multipleArgumentsNodeStyleFunction(callback) {
 	callback(null, 'a', 'b');
@@ -46,7 +43,7 @@ function myFilter(err, a, b) {
 	return [err, [a, b]];
 }
 
-describe('denodeify with es6 shim using multiple arguments', function(){
+exports.multipleArguments = function() {
 	it('should pass multiple arguments to the next then', function(done) {
 		var myDenodeifiedNodeStyleFunction = denodeify(multipleArgumentsNodeStyleFunction, myFilter);
 		myDenodeifiedNodeStyleFunction()
@@ -56,4 +53,4 @@ describe('denodeify with es6 shim using multiple arguments', function(){
 				done();
 			});
 	});
-});
+};
