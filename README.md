@@ -8,10 +8,10 @@ Inspired by and adapted from Q's [`Q.denodeify`/`Q.nfcall` function](https://git
 Warning: This micro-library doesn't force you to use any particular Promise implementation by using whatever `Promise` has been defined as globally.  This is so that you may use any ES6 standard Promise compliant library - or, of course, native ES6 Promises.
 
 If you're running the code on a browser or node version that doesn't include native promises you will need to include a polyfill.  The following polyfills are tested as part of this module's test suite:-
-- [Jake Archibald](https://twitter.com/jaffathecake)'s [ES6 Promise library](https://github.com/jakearchibald/es6-promise) (which is actually adapted from [Stefan Penner](https://twitter.com/stefanpenner)'s [RSVP.js](https://github.com/tildeio/rsvp.js)).
-- [Getify](https://twitter.com/getify)'s [Native Promise Only library](https://github.com/getify/native-promise-only)
-- [ES6 Shim](https://github.com/es-shims/es6-shim)
-- [Calvin Metcalf](https://twitter.com/CWMma)'s [Lie](https://github.com/calvinmetcalf/lie)
+- [Jake Archibald](https://twitter.com/jaffathecake)'s [ES6 Promise library](https://github.com/jakearchibald/es6-promise) (which is actually adapted from [Stefan Penner](https://twitter.com/stefanpenner)'s [RSVP.js](https://github.com/tildeio/rsvp.js)). -  `require('es6-promise').polyfill();`
+- [Getify](https://twitter.com/getify)'s [Native Promise Only library](https://github.com/getify/native-promise-only) - `require('native-promise-only');`
+- [ES6 Shim](https://github.com/es-shims/es6-shim) - `require('es6-shim');`
+- [Calvin Metcalf](https://twitter.com/CWMma)'s [Lie](https://github.com/calvinmetcalf/lie) - `global.Promise = require('lie');`
 
 ## Installation
 
