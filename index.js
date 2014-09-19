@@ -1,19 +1,41 @@
-module.exports = function(fun, filter) {
+function argsToArray(args) {
+	var newArgs = new Array(args.length);
+
+	for (var i = 0; i < newArgs.length; ++i) {
+		newArgs[i] = args[i];
+	}
+
+	return newArgs;
+}
+
+function denodify(nodeStyleFunction, filter) {
 	return function() {
-		var args = Array.prototype.slice.call(arguments, 0);
-		return new Promise(function(resolve, reject) {
-			args.push(function(err) {
-				var args = Array.prototype.slice.call(arguments, 0);
+		var functionArguments = argsToArray(arguments);
+
+		function promiseHandler(resolve, reject) {
+			function callbackFunction() {
+				var args = argsToArray(arguments);
+
 				if (filter) {
 					args = filter.apply(this, args);
 				}
-				if (args[0]) {
-					reject(args[0]);
-				} else {
-					resolve(args[1]);
+
+				var error = args[0];
+				var obj = args[1];
+
+				if (error) {
+					return reject(error);
 				}
-			});
-			fun.apply(this, args);
-		}.bind(this));
+
+				return resolve(obj);
+			}
+
+			functionArguments.push(callbackFunction);
+			nodeStyleFunction.apply(this, functionArguments);
+		}
+
+		return new Promise(promiseHandler.bind(this));
 	};
-};
+}
+
+module.exports = denodify;
