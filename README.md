@@ -16,7 +16,13 @@ If you're running the code on a browser or node version that doesn't include nat
 ## Installation
 
 ```
-npm install --save denodeify
+npm install denodeify --save
+```
+
+Or:-
+
+```
+bower install denodeify --save
 ```
 
 ## Examples
