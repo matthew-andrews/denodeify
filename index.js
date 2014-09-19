@@ -21,13 +21,13 @@ function denodify(nodeStyleFunction, filter) {
 				}
 
 				var error = args[0];
-				var obj = args[1];
+				var result = args[1];
 
 				if (error) {
 					return reject(error);
 				}
 
-				return resolve(obj);
+				return resolve(result);
 			}
 
 			functionArguments.push(callbackFunction);
