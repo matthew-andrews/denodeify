@@ -1,23 +1,22 @@
-function argsToArray(args) {
-	var newArgs = new Array(args.length);
-
-	for (var i = 0; i < newArgs.length; ++i) {
-		newArgs[i] = args[i];
-	}
-
-	return newArgs;
-}
-
 function denodify(nodeStyleFunction, filter) {
 	return function() {
-		var functionArguments = argsToArray(arguments);
+		var self = this;
+		var functionArguments = new Array(arguments.length + 1);
+
+		for (var i = 0; i < arguments.length; i += 1) {
+			functionArguments[i] = arguments[i];
+		}
 
 		function promiseHandler(resolve, reject) {
 			function callbackFunction() {
-				var args = argsToArray(arguments);
+				var args = new Array(arguments.length);
+
+				for (var i = 0; i < args.length; i += 1) {
+					args[i] = arguments[i];
+				}
 
 				if (filter) {
-					args = filter.apply(this, args);
+					args = filter.apply(self, args);
 				}
 
 				var error = args[0];
@@ -30,11 +29,11 @@ function denodify(nodeStyleFunction, filter) {
 				return resolve(result);
 			}
 
-			functionArguments.push(callbackFunction);
-			nodeStyleFunction.apply(this, functionArguments);
+			functionArguments[functionArguments.length - 1] = callbackFunction;
+			nodeStyleFunction.apply(self, functionArguments);
 		}
 
-		return new Promise(promiseHandler.bind(this));
+		return new Promise(promiseHandler);
 	};
 }
 
