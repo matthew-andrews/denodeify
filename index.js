@@ -1,4 +1,6 @@
 module.exports = function(fun, filter) {
+	'use strict';
+
 	return function() {
 		var args = Array.prototype.slice.call(arguments, 0);
 		return new Promise(function(resolve, reject) {
