@@ -1,4 +1,6 @@
 function denodify(nodeStyleFunction, filter) {
+	'use strict';
+
 	return function() {
 		var self = this;
 		var functionArguments = new Array(arguments.length + 1);
