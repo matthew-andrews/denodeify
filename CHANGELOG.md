@@ -4,6 +4,10 @@
 
 - Performance improvements, no API changes
 
+## v1.1.1
+
+- Add `'use strict';`
+
 ## v1.1.0
 
 - First bower release
