@@ -9,7 +9,7 @@
   "scripts": {
     "files": "find . -name '*.js' ! -path './node_modules/*'",
     "jshint": "./node_modules/.bin/jshint `npm run -s files`",
-    "lintspaces": "./node_modules/.bin/lintspaces `npm run -s files`",
+    "lintspaces": "./node_modules/.bin/lintspaces -i js-comments -e .editorconfig `npm run -s files`",
     "test": "./node_modules/.bin/mocha test/*test.js && npm run jshint && npm run lintspaces"
   },
   "repository": {
