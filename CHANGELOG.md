@@ -18,4 +18,4 @@
 
 ## v1.0.0
 
-- First version of denodeify
+- First version of `denodeify`
