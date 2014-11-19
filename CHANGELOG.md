@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.0
+
+- Add UMD so that `denodeify` can be used in the browser
+
 ## v1.1.2
 
 - Performance improvements, no API changes
