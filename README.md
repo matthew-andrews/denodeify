@@ -13,6 +13,8 @@ If you're running the code on a browser or node version that doesn't include nat
 - [ES6 Shim](https://github.com/es-shims/es6-shim) - `require('es6-shim');`
 - [Calvin Metcalf](https://twitter.com/CWMma)'s [Lie](https://github.com/calvinmetcalf/lie) - `global.Promise = global.Promise || require('lie');`
 
+Note: as of v1.2.0 you can use **denodeify** in the front end.  Pull it in via CommonJS, AMD or simply add to your webpage and it'll be available on `window.denodeify`. 
+
 ## Installation
 
 ```
