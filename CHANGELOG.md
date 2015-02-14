@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.1
+
+- Correct spelling of `denodeify` in internal code
+
 ## v1.2.0
 
 - Add UMD so that `denodeify` can be used in the browser
