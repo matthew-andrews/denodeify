@@ -1,6 +1,6 @@
 ;(function(define){define(function(require,exports,module){
 
-	function denodify(nodeStyleFunction, filter) {
+	function denodeify(nodeStyleFunction, filter) {
 		'use strict';
 
 		return function() {
@@ -41,7 +41,7 @@
 		};
 	}
 
-	module.exports = denodify;
+	module.exports = denodeify;
 
 });})(typeof define=='function'&&define.amd?define
 :(function(n,w){'use strict';return typeof module=='object'?function(c){
