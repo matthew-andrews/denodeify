@@ -86,6 +86,16 @@ exec('my-command')
 
 Useful for functions that return multiple arguments, for example [`child_process#exec`](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback).
 
+## Troubleshooting
+
+Note that if you have a method that uses the Node.js callback pattern, as opposed to just a function, you will need to bind its this value before passing it to denodeify, like so:
+
+```js
+var Thing = mongoose.model("Thing");
+var brokenFind = denodeify( Thing.find ); // the find method won't have the right 'this' defined
+var findThings = denodeify( Thing.find.bind(Thing) );
+```
+
 ## Credits and collaboration ##
 
 The lead developer of **denodeify** is [Matt Andrews](http://twitter.com/andrewsmatt) at FT Labs with much help and support from [Kornel Lesiński](https://twitter.com/pornelski). All open source code released by FT Labs is licenced under the MIT licence. We welcome comments, feedback and suggestions.  Please feel free to raise an issue or pull request.
