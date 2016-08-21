@@ -5,7 +5,7 @@
 
 		return function() {
 			var self = this;
-			var functionArguments = [].concat(Array.prototype.slice.call(arguments), [undefined]);
+			var functionArguments = [].concat(Array.prototype.slice.call(arguments));
 
 			function promiseHandler(resolve, reject) {
 				function callbackFunction() {
@@ -25,7 +25,7 @@
 					return resolve(result);
 				}
 
-				functionArguments[functionArguments.length - 1] = callbackFunction;
+				functionArguments[functionArguments.length] = callbackFunction;
 				nodeStyleFunction.apply(self, functionArguments);
 			}
 
